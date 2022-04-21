@@ -120,10 +120,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(Uri uri) {
                             //image uploaded to firebase
-                            /*generating a url that will be used to retrieve back the image. This url is stored in Realtime Database*/
-                            Model retrieveModel = new Model(uri.toString());
-                            String downloadUrl = databaseReference.push().getKey();
-                            databaseReference.child(downloadUrl).setValue(retrieveModel);      //storing the url
                             progressBar.setVisibility(View.INVISIBLE);                         //Dismissing the progress bar
                             Toast.makeText(MainActivity.this, "Successfully Uploaded", Toast.LENGTH_SHORT).show();
 

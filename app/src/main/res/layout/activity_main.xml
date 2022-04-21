@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/user_profile_avatar">
+
+    </ImageView>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iv_photo"
+        android:layout_marginTop="20dp">
+
+    </ProgressBar>
+
+
+    <Button
+        android:id="@+id/btn_chooseImage"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/progress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Choose Image">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Upload"
+        android:layout_below="@id/btn_chooseImage">
+
+    </Button>
+
+
+</RelativeLayout>

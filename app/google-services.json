@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "76780724861",
+    "project_id": "fir-upload-98b60",
+    "storage_bucket": "fir-upload-98b60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76780724861:android:7628bc403046ae197ac714",
+        "android_client_info": {
+          "package_name": "com.android.firebaseupload"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76780724861-bibm3db5cfrnco823tuoii12a2lsu5f3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIcAB9MxadOFaHFez0xiw5HEZSS4tYIHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76780724861-bibm3db5cfrnco823tuoii12a2lsu5f3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

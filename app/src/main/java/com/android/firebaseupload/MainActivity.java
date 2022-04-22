@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     //View for image
     ImageView imageView;
     //Views for buttons
-    Button btn_choose, btn_upload;
+    Button btn_choose, btn_upload, btn_showImages;
     //Request code
     private static final int IMAGE_REQ_CODE = 101;
     //File path
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         btn_choose = findViewById(R.id.btn_chooseImage);
         btn_upload = findViewById(R.id.btn_upload);
         progressBar = findViewById(R.id.progress);
+        btn_showImages = findViewById(R.id.btn_show);
 
         //Making the progress bar invisible when the app starts
         progressBar.setVisibility(View.INVISIBLE);
@@ -76,6 +77,17 @@ public class MainActivity extends AppCompatActivity {
             {
                 //Upload Image
                 uploadImage(imageUri);
+            }
+        });
+
+        btn_showImages.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                //Showing uploaded images
+                startActivity(new Intent(MainActivity.this, ShowImagesActivity.class));
+
             }
         });
     }
@@ -120,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(Uri uri) {
                             //image uploaded to firebase
+                            /*generating url link for retrieving back the images. This url will be stored in firebase realtime database*/
+                            Model urlModel = new Model(uri.toString());
+                            String downloadUrl = databaseReference.push().getKey();
+                            databaseReference.child(downloadUrl).setValue(urlModel);           //Storing the downloadUrl
                             progressBar.setVisibility(View.INVISIBLE);                         //Dismissing the progress bar
                             Toast.makeText(MainActivity.this, "Successfully Uploaded", Toast.LENGTH_SHORT).show();
 
@@ -129,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>()
             {
+                
                 @Override
                 public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot)
                 { //When the upload is in progress

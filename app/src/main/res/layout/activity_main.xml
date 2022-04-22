@@ -43,10 +43,21 @@
         android:id="@+id/btn_upload"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_below="@id/btn_chooseImage"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:text="Upload"
-        android:layout_below="@id/btn_chooseImage">
+        android:text="Upload">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/btn_upload"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="SHOW IMAGES">
 
     </Button>
 
